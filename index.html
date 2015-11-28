@@ -26,14 +26,21 @@
   <script>
     var socket = io();
     var userid = 0;
+    var connected = false;
+
     $('form').submit(function(){
       socket.emit('chat message', userid + ': ' + $('#m').val());
       $('#m').val('');
       return false;
     });
     socket.on('welcome', function(msg){
-      userid = msg;
-      $('#messages').append($('<li>').text('Welcome to the chatroom user ' + msg));
+      if (!connected) {
+        userid = msg;
+        connected = true;
+        $('#messages').append($('<li>').text('Welcome to the chatroom user ' + msg));
+      } else {
+        $('#messages').append($('<li>').text('User ' + msg + ' has entered the chat room'));
+      }
     });
     socket.on('chat message', function(msg){
       $('#messages').append($('<li>').text(msg));
