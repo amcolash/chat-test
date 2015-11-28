@@ -1,0 +1,22 @@
+{
+  "name": "chat-test",
+  "version": "0.0.1",
+  "description": "A simple chat room made with Socket.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/amcolash/chat-test.git"
+  },
+  "author": "Andrew McOlash",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/amcolash/chat-test/issues"
+  },
+  "dependencies": {
+    "express": "~4.13.3",
+    "socket.io": "~1.3.7"
+  }
+}

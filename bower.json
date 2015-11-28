@@ -1,0 +1,21 @@
+{
+  "name": "chat-test",
+  "description": "A simple chat room made with Socket.io",
+  "main": "index.js",
+  "authors": [
+    "Andrew McOlash"
+  ],
+  "license": "BSD-2-Clause",
+  "homepage": "https://github.com/amcolash/chat-test",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
