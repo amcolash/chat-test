@@ -25,10 +25,15 @@
 
   <script>
     var socket = io();
+    var userid = 0;
     $('form').submit(function(){
-      socket.emit('chat message', $('#m').val());
+      socket.emit('chat message', userid + ': ' + $('#m').val());
       $('#m').val('');
       return false;
+    });
+    socket.on('welcome', function(msg){
+      userid = msg;
+      $('#messages').append($('<li>').text('Welcome to the chatroom user ' + msg));
     });
     socket.on('chat message', function(msg){
       $('#messages').append($('<li>').text(msg));
