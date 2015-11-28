@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div id="main-section" class="row">
+        <div id="messages" class="col-sm-9 no-padding">
+          <ul class="no-padding"></ul>
+        </div>
+
+        <div id="users" class="col-sm-3 no-padding">
+          <ul class="no-padding">
+            <li>
+              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+              <span id="user"></span>
+              <button id="rename" class="btn btn-xs btn-info pull-right">Rename</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="bottom-bar" class="row">
+        <form class="no-margin" action="">
+          <div class="row no-margin">
+            <div class="col-xs-9">
+              <input id="m" class="form-control" autocomplete="off" />
+            </div>
+            <div class="col-xs-3">
+              <button class="btn btn-primary btn-block">Send</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</html>
