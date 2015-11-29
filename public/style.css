@@ -41,6 +41,11 @@
   padding-top: 3px;
 }
 
+/* Not sure why things were not lining up correctly */
+.user-name {
+  padding-left: 4px;
+}
+
 #bottom-bar {
   height: 45px;
   border-top: solid 1px #ccc;

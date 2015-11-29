@@ -33,7 +33,8 @@ socket.on('users', function(msg) {
 
   $('#user-list').empty();
   $.each(msg, function(index, value) {
-    $('#user-list').append($('<li>').text(value));
+    $('#user-list').append($('<li><span class="glyphicon glyphicon-user" aria-hidden="true"></span>'
+      + '<span class="user-name">' + value + '</span></li>'));
   });
 });
 
