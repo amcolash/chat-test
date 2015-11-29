@@ -65,7 +65,7 @@ $('#chat-form').submit(function(){
 });
 
 $('#arrow').click(function() {
-  $('#messages').toggleClass('col-xs-7');
+  $('#messages').toggleClass('col-xs-6');
   $('#messages').toggleClass('col-sm-9');
   $('#users').toggle();
   $('#arrow').toggleClass('glyphicon-chevron-right');
