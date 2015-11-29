@@ -26,13 +26,13 @@ io.on('connection', function(socket) {
   });
 
   socket.on('rename', function(msg) {
-    io.emit('chat message', allClients.get(socket) + ' has changed their name to ' + msg);
+    io.emit('chat message', 'System: ' + allClients.get(socket) + ' has changed their name to ' + msg);
     allClients.set(socket, msg);
     io.emit('users', allClients.values());
   });
 
   socket.on('disconnect', function() {
-    io.emit('chat message', allClients.get(socket) + ' left chat room');
+    io.emit('chat message', 'System: ' + allClients.get(socket) + ' left chat room');
     allClients.remove(socket);
     io.emit('users', allClients.values());
   });

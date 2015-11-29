@@ -8,6 +8,7 @@
 
 #main-section {
   height: calc(100vh - 45px);
+  position: relative;
 }
 
 #main-section ul {
@@ -44,6 +45,13 @@
 /* Not sure why things were not lining up correctly */
 .user-name {
   padding-left: 4px;
+}
+
+#arrow {
+  position: absolute;
+  top: auto;
+  bottom: 5px;
+  right: 20px;
 }
 
 #bottom-bar {

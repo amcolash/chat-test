@@ -8,14 +8,22 @@ $('form').submit(function(){
   return false;
 });
 
+$('#arrow').click(function() {
+  $('#messages').toggleClass('col-xs-7');
+  $('#messages').toggleClass('col-sm-9');
+  $('#users').toggle();
+  $('#arrow').toggleClass('glyphicon-chevron-right');
+  $('#arrow').toggleClass('glyphicon-chevron-left');
+});
+
 socket.on('welcome', function(msg){
   if (!connected) {
     userid = msg;
     $('#user').text(userid + ' (You)');
     connected = true;
-    $('#messages ul').append($('<li>').text('Welcome to the chatroom ' + userid));
+    $('#messages ul').append($('<li>').text('System: Welcome to the chatroom ' + userid));
   } else {
-    $('#messages ul').append($('<li>').text(msg + ' has entered the chat room'));
+    $('#messages ul').append($('<li>').text('System: ' + msg + ' has entered the chat room'));
   }
 });
 
