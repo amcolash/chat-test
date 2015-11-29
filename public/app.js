@@ -5,15 +5,11 @@ var connected = false;
 $('#enter-chat').submit(function() {
   $('.loader').toggle();
   $('#enter-chat').toggle();
+  initSocket();
+
   setTimeout(function() {
     $('#intro').toggle();
     $('#chat').toggle();
-    initSocket();
-
-    if ($('#name').val()) {
-      userid = $('#name').val();
-      socket.emit('rename', userid);
-    }
   }, 2000);
 
   return false;
@@ -54,6 +50,12 @@ function initSocket() {
         + '<span class="user-name">' + value + '</span></li>'));
     });
   });
+
+  // Set up custom user name on login
+  if ($('#name').val()) {
+    userid = $('#name').val();
+    socket.emit('rename', userid);
+  }
 }
 
 $('#chat-form').submit(function(){
