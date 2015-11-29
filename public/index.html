@@ -1,12 +1,30 @@
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Socket.IO chat</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
   </head>
 
   <body>
-    <div class="container-fluid">
+    <div id="intro">
+      <div class="col-sm-4 col-xs-10 col-sm-offset-4 col-xs-offset-1" id="login">
+        <h2>Welcome to my Socket.IO chatroom!</h2>
+        <form id="enter-chat" action="">
+          <div class="form-group">
+            <input id="name" class="form-control" autocomplete="off" placeholder="username (blank for random)"/>
+          </div>
+          <button class="btn btn-success btn-block">Enter</button>
+        </form>
+        <div class="loader">Loading...</div>
+      </div>
+    </div>
+
+    <div id="chat" class="container-fluid">
       <div id="main-section" class="row">
         <div id="messages" class="col-sm-9 col-xs-7 no-padding">
           <ul class="no-padding"></ul>
@@ -30,7 +48,7 @@
       </div>
 
       <div id="bottom-bar" class="row">
-        <form class="no-margin" action="">
+        <form id="chat-form" class="no-margin" action="">
           <div class="row no-margin">
             <div class="col-xs-9">
               <input id="m" class="form-control" autocomplete="off" />
